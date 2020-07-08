@@ -18,6 +18,7 @@ public class HomeController : Controller
         _employeeRepository = employeeRepository;
     }
 
+        // Added Routes for Routing through Attribute
         [Route("")]
         [Route("Home")]
         [Route("Home/Index")]
