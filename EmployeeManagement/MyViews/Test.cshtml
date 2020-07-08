@@ -3,6 +3,52 @@
     <title></title>
 </head>
 <body>
-    <h1> Test.csHtml from MyViews</h1>
+    <h1>Here the data will be fetched from razor view, which involves both C# and HTML</h1>
+
+
+
+    @*<h3> @ViewBag.PageTitle</h3>
+
+    <div>
+        Name: @ViewBag.Employee.Name
+    </div>
+
+
+    <div>
+        Department: @ViewBag.Employee.Department
+    </div>
+
+
+    <div>
+        Email: @ViewBag.Employee.Email
+    </div>*@
+
+
+
+
+
+
+    @* <h3>@ViewData["PageTitle"]</h3>
+
+        @{
+
+            var employee = ViewData["Employee"] as EmployeeManagement.Models.Employee;
+
+        }
+
+        <div>
+            Name: @employee.Name
+        </div>
+
+
+        <div>
+            Department: @employee.Department
+        </div>
+
+
+        <div>
+            Email: @employee.Email
+        </div>*@
+
 </body>
 </html>

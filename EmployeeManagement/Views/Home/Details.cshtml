@@ -1,9 +1,24 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    <h1> Details from Details method.</h1>
-    <h1>{model.Id}</h1>
-</body>
-</html>
+﻿@model HomeDetailsViewModel
+
+@{
+    //Layout = "../Shared/_Layout.cshtml"; because we used View Start which will take care of our layout.
+    ViewBag.Title = "Employee List Details";
+}
+
+<h1>@Model.PageTitle</h1>
+
+<div>
+Name: @Model.Employee.Name
+</div>
+
+<div>
+Department: @Model.Employee.Department
+</div>
+
+<div>
+Email: @Model.Employee.Email
+</div>
+
+@section Scripts {
+    <script src="~/js/CustomJavaScript.js"></script>
+}
