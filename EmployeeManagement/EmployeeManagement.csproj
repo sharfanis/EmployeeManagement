@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\" />
+    <None Include="wwwroot\js\CustomJavaScript.js" />
   </ItemGroup>
 
   <ItemGroup>

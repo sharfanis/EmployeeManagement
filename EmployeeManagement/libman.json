@@ -3,7 +3,11 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "twitter-bootstrap@5.0.0-alpha1",
+      "library": "jquery@3.3.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "twitter-bootstrap@4.3.1",
       "destination": "wwwroot/lib/bootstrap/"
     }
   ]
