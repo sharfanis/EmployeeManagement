@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Controllers
 {
+    [Route("[controller]/[action]")]
 public class HomeController : Controller
 {
     private readonly IEmployeeRepository _employeeRepository;
@@ -19,17 +20,17 @@ public class HomeController : Controller
     }
 
         // Added Routes for Routing through Attribute
-        //This is a test comment .
         [Route("")]
-        [Route("Home")]
-        [Route("Home/Index")]
+        [Route("~/")]
+        [Route("~/Home")]
+        //[Route("Home/Index")]
         public ViewResult Index()
     {
         var model =  _employeeRepository.GetAllEmployees();
         return View("~/Views/Home/Index.cshtml",model);
 
     }
-        [Route("Home/Details/{id?}")]
+        [Route("{id?}")]
         public ViewResult Details(int? id)
     {
         //Employee employee = _employeeRepository.GetEmployee(id);
