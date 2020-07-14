@@ -2,22 +2,30 @@
 
 <html>
 <head>
+
     <meta name="viewport" content="width=device-width" />
 
     @* This will allow for Dev environment to load bootstrap from local and from others it'll load from CDN *@
+
     <environment include="Development">
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     </environment>
 
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-              crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+              crossorigin="anonymous"
+              asp-fallback-href= "~/lib/bootstrap/css/bootstrap.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              asp-suppress-fallback-integrity="true"
+            >
     </environment>
 
-
-
     @*<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />*@
+
+
     <link href="~/css/site.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
