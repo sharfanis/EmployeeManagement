@@ -1,4 +1,4 @@
-# EmployeeManagement
+# Employee Management
 Simple Project with ASP.NET Core From Basic Concepts To Advanced Level Concepts Covered.
 
 Will Update this Project as I am progressing.
