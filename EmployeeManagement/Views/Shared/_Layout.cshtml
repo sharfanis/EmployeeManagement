@@ -7,20 +7,21 @@
 
     @* This will allow for Dev environment to load bootstrap from local and from others it'll load from CDN *@
 
-    <environment include="Development">
+<environment include="Development">
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    </environment>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+</environment>
 
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
               crossorigin="anonymous"
-              asp-fallback-href= "~/lib/bootstrap/css/bootstrap.css"
+              asp-fallback-href="~/lib/bootstrap/css/bootstrap.css"
               asp-fallback-test-class="sr-only"
               asp-fallback-test-property="position"
               asp-fallback-test-value="absolute"
-              asp-suppress-fallback-integrity="true"
-            >
+              asp-suppress-fallback-integrity="true">
     </environment>
 
     @*<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />*@
@@ -30,12 +31,48 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+
     <div class="container">
-        @RenderBody()
+        <nav class="navbar navbar-expand-sm  bg-dark navbar-dark">
+
+            <a class="navbar-brand" asp-action="index" asp-controller="home">
+                <img src="~/images/happy.jpg" height="30" width="30" />
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" 
+                    data-target="#collapseibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="collapseibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a asp-action="index" asp-controller="home" class="nav-link"> List</a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-action="create" asp-controller="home" class="nav-link"> Create</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+
+
+
+        <div>
+            @RenderBody()
+        </div>
+        @if (IsSectionDefined("Scripts"))
+        {
+            @RenderSection("Scripts", required: true)
+        }
     </div>
-    @if (IsSectionDefined("Scripts"))
-    {
-    @RenderSection("Scripts", required:true)
-    }
 </body>
 </html>
+
+
+
+
+
+
+
+

@@ -83,7 +83,6 @@ C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\bin\Debug\netc
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csprojAssemblyReference.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.RazorAssemblyInfo.cache
@@ -108,3 +107,4 @@ C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netc
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.dll
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.pdb
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.genruntimeconfig.cache
+C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csprojAssemblyReference.cache
