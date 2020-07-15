@@ -30,6 +30,14 @@ public class HomeController : Controller
         return View("~/Views/Home/Index.cshtml",model);
 
     }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+
+
         [Route("{id?}")]
         public ViewResult Details(int? id)
     {

@@ -108,3 +108,4 @@ C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netc
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.pdb
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.genruntimeconfig.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csprojAssemblyReference.cache
+C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Create.cshtml.g.cs
