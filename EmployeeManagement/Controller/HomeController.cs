@@ -37,10 +37,17 @@ public class HomeController : Controller
         }
 
         [HttpPost]
-        public RedirectToActionResult Create(Employee employee)
+        public IActionResult Create(Employee employee) 
         {
-            Employee newEmployee = _employeeRepository.AddEmployee(employee);
-            return RedirectToAction("details", new { id = newEmployee.Id });
+        // IAction Result is parent of ViewResult and RedirectToActionResult.
+
+            if (ModelState.IsValid) // This for checking if the validation on field is present.
+            {
+                Employee newEmployee = _employeeRepository.AddEmployee(employee);
+                return RedirectToAction("details", new { id = newEmployee.Id });
+            }
+
+            return View();
         }
 
 
