@@ -30,10 +30,17 @@ public class HomeController : Controller
         return View("~/Views/Home/Index.cshtml",model);
 
     }
-
+        [HttpGet]
         public ViewResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public RedirectToActionResult Create(Employee employee)
+        {
+            Employee newEmployee = _employeeRepository.AddEmployee(employee);
+            return RedirectToAction("details", new { id = newEmployee.Id });
         }
 
 
