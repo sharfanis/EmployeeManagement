@@ -7,7 +7,7 @@ namespace EmployeeManagement.Models
 {
     public enum Dept
     {
-        None,
+        Admin,
         HR,
         IT,
         Medico
