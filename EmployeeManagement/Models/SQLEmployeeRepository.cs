@@ -13,31 +13,59 @@ namespace EmployeeManagement.Models
             this.context = context;
         }
 
-        public AppDbContext Context { get; }
+
 
         public Employee AddEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            this.context.Employees.Add(employee);
+            this.context.SaveChanges();
+            return employee;
         }
 
         public Employee DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            Employee emp = this.context.Employees.Find(id);
+            if (emp != null)
+            {
+                this.context.Employees.Remove(emp);
+                this.context.SaveChanges();
+            }
+            return emp;
         }
 
         public IEnumerable<Employee> GetAllEmployees()
         {
-            throw new NotImplementedException();
+            return this.context.Employees;
         }
 
         public Employee GetEmployee(int Id)
         {
-            throw new NotImplementedException();
+            return this.context.Employees.Find(Id);
         }
 
         public Employee UpdateEmployee(Employee employeeChanges)
         {
-            throw new NotImplementedException();
+
+            // New way of updating in ASP NET CORE.
+            var emp = this.context.Employees.Attach(employeeChanges);
+            emp.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            this.context.SaveChanges();
+            return employeeChanges;
+
         }
+
+
+        //    Employee emp = this.context.Employees.Find(employeeChanges.Id);
+
+        //    if(emp != null)
+        //    {
+        //        emp.Name = employeeChanges.Name;
+        //        emp.Department = employeeChanges.Department;
+        //        emp.Email = employeeChanges.Email;
+        //    }
+
+        //    return employeeChanges;
+
+        //}
     }
 }
