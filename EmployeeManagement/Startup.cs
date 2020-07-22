@@ -35,8 +35,17 @@ namespace EmployeeManagement
 
             /// basically saying that if home controller where the Employee Respository is sitting ,
             /// if you want to access IEmployee Respository  , then inject MockEmployeeRepository.
-            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
 
+            //With this one line of code we can tell .NET core that if we  are asking from
+            // IEmployeeREPO give them implementation of MockEmployeeRepo but we don't want inhouse storage
+            //this time we want SQLEmployee Repo so change this line.
+            //services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+            //This is power of Repo pattern with Dependency Injection.
+
+            //Add Scoped so that the instance of SQLEMPLOYEEREPO to be alive during one 
+            //HTTP Request and a new instance for another HTTP Request.
+
+            services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
 
         }
 
