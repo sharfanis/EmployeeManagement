@@ -3,6 +3,7 @@
 @{
     //Layout = "../Shared/_Layout.cshtml"; because we used View Start which will take care of our layout.
     ViewBag.Title = "Employee List Details";
+    var photoPath ="~/images/" + (Model.Employee.PhotoPath ?? "22.jpg");
 }
 
 <h1>@Model.PageTitle</h1>
@@ -17,7 +18,7 @@
 
             <div class="card-body text-center">
 
-                <img class="card-img-top" src="~/images/22.jpg" />
+                <img class="card-img-top" src="@photoPath" asp-append-version="true" />
 
                 <h4>Employee Id: @Model.Employee.Id</h4>
 
