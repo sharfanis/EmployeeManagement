@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200722234412_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20200722234412_AddPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200722234656_AddSomePropertMigration.cs" />
+    <Compile Remove="Migrations\20200722234656_AddSomePropertMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200722235224_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20200722235224_AddPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200722235521_Refresh.cs" />
+    <Compile Remove="Migrations\20200722235521_Refresh.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\CustomJavaScript.js" />
   </ItemGroup>
 
