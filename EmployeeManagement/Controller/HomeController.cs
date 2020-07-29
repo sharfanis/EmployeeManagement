@@ -39,11 +39,92 @@ public class HomeController : Controller
         return View("~/Views/Home/Index.cshtml",model);
 
     }
+        
+
+
+        [HttpGet]
+        public ViewResult Edit(int id)
+        {
+            Employee employee = _employeeRepository.GetEmployee(id);
+            EmployeeEditViewModel employeeEditViewModel = new EmployeeEditViewModel
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Email = employee.Email,
+                Department = employee.Department,
+                ExistingPhotoPath = employee.PhotoPath
+            };
+
+            return View(employeeEditViewModel);
+        }
+
+
+        [HttpPost]
+
+        public IActionResult Edit(EmployeeEditViewModel model)
+        {
+            // IAction Result is parent of ViewResult and RedirectToActionResult.
+
+            if (ModelState.IsValid) // This for checking if the validation on field is present.
+            {
+
+                Employee employee = _employeeRepository.GetEmployee(model.Id);
+
+                employee.Name = model.Name;
+                employee.Email = model.Email;
+                employee.Department = model.Department;
+                // To check if a new photo is uploaded.
+                if (model.Photos != null)
+                {
+                    // To delete the old picture if a new photo is upploaded.
+                    if(model.ExistingPhotoPath != null)
+                    {
+                        string filePath = Path.Combine(hostingEnvironment.WebRootPath, "images", model.ExistingPhotoPath);
+                        System.IO.File.Delete(filePath);
+                    }
+
+                    employee.PhotoPath = ProcessUploadedFile(model);
+                }
+
+                _employeeRepository.UpdateEmployee(employee);
+                return RedirectToAction("index", new { id = employee.Id });
+
+            }
+
+            return View();
+
+
+        }
+
+        private string ProcessUploadedFile(EmployeeCreateViewModel model)
+        {
+            string uniqueFileName = null;
+
+            if (model.Photos != null && model.Photos.Count > 0)
+            {
+                foreach (IFormFile photo in model.Photos)
+                {
+
+                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "images");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using(var fileStream = new FileStream(filePath , FileMode.Create))
+                    {
+                        photo.CopyTo(fileStream);
+                    }
+                   
+                }
+            }
+
+            return uniqueFileName;
+        }
+
         [HttpGet]
         public ViewResult Create()
         {
             return View();
         }
+
 
         [HttpPost]
         //public IActionResult Create(Employee employee) 
@@ -67,19 +148,8 @@ public class HomeController : Controller
 
             if (ModelState.IsValid) // This for checking if the validation on field is present.
             {
-                string uniqueFileName = null;
+                string uniqueFileName = ProcessUploadedFile(model);
 
-                if(model.Photos != null && model.Photos.Count > 0)
-                {
-                    foreach (IFormFile photo in model.Photos)
-                    {
-
-                        string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "images");
-                        uniqueFileName = Guid.NewGuid().ToString() + "_" + photo.FileName;
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        photo.CopyTo(new FileStream(filePath, FileMode.Create));
-                    }
-                }
 
                 Employee newEmployee = new Employee
                 {

@@ -33,7 +33,8 @@
             <a href="/home/details/@employee.Id" class="btn btn-primary">View</a>*@
 
 
-            <a href="#" class="btn btn-primary m-1">Edit</a>
+            <a  asp-action="edit" asp-controller="home" asp-route-id="@employee.Id"
+               class="btn btn-primary m-1">Edit</a>
 
             <a href="#" class="btn btn-danger m-1">Delete</a>
         </div>
