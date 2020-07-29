@@ -143,3 +143,4 @@ C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\bin\Debug\netc
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\EmployeeManagement.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
+C:\Users\Owner\source\repos\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp3.1\Razor\Views\Home\EmployeeNotFound.cshtml.g.cs

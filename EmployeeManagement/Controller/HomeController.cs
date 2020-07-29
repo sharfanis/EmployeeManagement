@@ -174,33 +174,43 @@ public class HomeController : Controller
         [Route("{id?}")]
         public ViewResult Details(int? id)
     {
-        //Employee employee = _employeeRepository.GetEmployee(id);
+            //Employee employee = _employeeRepository.GetEmployee(id);
 
-        // Use of View Data for passing values from Controller to View.
-        // ViewData["Employee"] = employee;
-        // ViewData["PageTitle"] = "Employee Details";
+            // Use of View Data for passing values from Controller to View.
+            // ViewData["Employee"] = employee;
+            // ViewData["PageTitle"] = "Employee Details";
 
-        // Use of View Bag
-        //ViewBag.Employee = employee;
-        //ViewBag.PageTitile = "Employee Details";
-
-
-
-        //return View("~/MyViews/Test.cshtml");
-
-        // Relative path for views
-        // return View("../../MyViews/Test");
-
-        // Passing the values using strongly typed view.
-        //ViewBag.PageTitle = "Employee Details";
-        //return View(employee);
+            // Use of View Bag
+            //ViewBag.Employee = employee;
+            //ViewBag.PageTitile = "Employee Details";
 
 
-        // Use of DTO now.
+
+            //return View("~/MyViews/Test.cshtml");
+
+            // Relative path for views
+            // return View("../../MyViews/Test");
+
+            // Passing the values using strongly typed view.
+            //ViewBag.PageTitle = "Employee Details";
+            //return View(employee);
+
+
+            // Use of DTO now.
+
+            Employee employee = _employeeRepository.GetEmployee(id.Value);
+
+            if(employee == null)
+            {
+                Response.StatusCode = 404;
+                return View("EmployeeNotFound", id.Value);
+
+            }
+
 
         HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
         {
-            Employee = _employeeRepository.GetEmployee(id??1),
+            Employee = employee,
             PageTitle = "Employee Details Homie"
         };
 
