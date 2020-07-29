@@ -28,6 +28,7 @@ Progress so far :
 21. Use of SQL Server with EF CORE
 22. EF Core Migrations 
 23. Seed Data EF Core
+24. Edit Action on employees 
 
 
 
