@@ -174,6 +174,10 @@ public class HomeController : Controller
         [Route("{id?}")]
         public ViewResult Details(int? id)
     {
+
+            // throw new Exception("Error in details view"); This is only to trigger the error messages.
+
+
             //Employee employee = _employeeRepository.GetEmployee(id);
 
             // Use of View Data for passing values from Controller to View.
