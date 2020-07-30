@@ -30,6 +30,7 @@ Progress so far :
 23. Seed Data EF Core
 24. Edit Action on employees 
 25. Error 404 Handling for resopurce not found or URL not found.
+26. Global Exception Handling
 
 
 
