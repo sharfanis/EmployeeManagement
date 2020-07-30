@@ -70,7 +70,10 @@ namespace EmployeeManagement
 
             } else if ( env.IsStaging() || env.IsProduction() || env.IsEnvironment("UAT"))
             {
-                app.UseExceptionHandler("/Error");
+                //app.UseExceptionHandler("/Error");
+                // app.UseStatusCodePagesWithRedirects("/Error/{0}");    Avoid this because it is deceving in network tab.
+
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
             }
 
 
