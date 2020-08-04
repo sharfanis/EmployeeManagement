@@ -173,9 +173,9 @@ public class HomeController : Controller
 
         [Route("{id?}")]
         public ViewResult Details(int? id)
-    {
+        {
 
-            // throw new Exception("Error in details view"); This is only to trigger the error messages.
+             //throw new Exception("Error in details view"); //This is only to trigger the error messages.
 
 
             //Employee employee = _employeeRepository.GetEmployee(id);
