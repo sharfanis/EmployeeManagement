@@ -32,9 +32,11 @@ namespace EmployeeManagement
                 options => options.UseSqlServer(_config.GetConnectionString("EmployeeDbConnection")));
 
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>;
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<AppDbContext>;
 
+            services.AddIdentity<IdentityUser, IdentityRole>();
+        
             services.AddMvc(options => options.EnableEndpointRouting = false);
             //services.AddMvcCore();
 
